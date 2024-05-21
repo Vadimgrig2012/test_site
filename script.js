@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const mousePosX = e.clientX - boundingRect.left - boundingRect.width / 2; // X position relative to the center of the button
       const mousePosY = e.clientY - boundingRect.top - boundingRect.height / 2; // Y position relative to the center of the button
   
-      const zDisplacement = Math.max(-80, Math.min(80, (mousePosX / boundingRect.width) * 80));
+      const yDisplacement = Math.max(-90, Math.min(90, (mousePosX / boundingRect.width) * 90));
+      const zDisplacement = Math.max(-20, Math.min(20, (mousePosX / boundingRect.width) * 20));
 
       // Use GSAP (GreenSock Animation Platform) to animate the button
       gsap.to(button, {
@@ -26,8 +27,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       gsap.to(txtBtn,{
         x: mousePosX * 0.5, // Move horizontally towards mouse
         y: mousePosY * 0.4, // Move vertically towards mouse
-        // rotationZ: zDisplacement,
-        rotationY: zDisplacement,
+        rotationY: yDisplacement,
+        rotationZ: zDisplacement,
         duration: 0.5, // Duration of the animation
         ease: 'power3.out', // Easing function for smooth animation
       });
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         x: 0, // Reset horizontal position
         y: 0, // Reset vertical position
         scale: 1, // Reset scale
+        rotationY: 0,
         rotationZ: 0,
         duration: 1, // Duration of the animation
         ease: 'elastic.out(1,0.3)' 
