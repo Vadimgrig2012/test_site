@@ -3,11 +3,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const button = document.querySelector('.btn');
     const txtBtn = document.querySelector('.btn-text')
   
-    // Get the button's initial bounding rectangle dimensions and position
-    let boundingRect = button.getBoundingClientRect();
-    let boundingRectTxt = txtBtn.getBoundingClientRect();
-
-  
     // Add an event listener for mouse movement over the button
     button.addEventListener('mousemove', (e) => {
       // Get the current bounding rectangle dimensions and position
@@ -18,10 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const mousePosX = e.clientX - boundingRect.left - boundingRect.width / 2; // X position relative to the center of the button
       const mousePosY = e.clientY - boundingRect.top - boundingRect.height / 2; // Y position relative to the center of the button
   
-      const mousePosTxtX = e.clientX - boundingRectTxt.left - boundingRectTxt.width / 2;
-      const mousePosTxtY = e.clientY - boundingRectTxt.top - boundingRectTxt.height / 2;
-
-      const zDisplacement = Math.max(-20, Math.min(20, (mousePosX / boundingRect.width) * 20));
+      const zDisplacement = Math.max(-80, Math.min(80, (mousePosX / boundingRect.width) * 80));
 
       // Use GSAP (GreenSock Animation Platform) to animate the button
       gsap.to(button, {
@@ -32,9 +24,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ease: 'power3.out', // Easing function for smooth animation
       });
       gsap.to(txtBtn,{
-        x: mousePosX * 0.2, // Move horizontally towards mouse
-        y: mousePosY * 0.2, // Move vertically towards mouse
-        rotationZ: zDisplacement,
+        x: mousePosX * 0.5, // Move horizontally towards mouse
+        y: mousePosY * 0.4, // Move vertically towards mouse
+        // rotationZ: zDisplacement,
+        rotationY: zDisplacement,
         duration: 0.5, // Duration of the animation
         ease: 'power3.out', // Easing function for smooth animation
       });
