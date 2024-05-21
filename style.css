@@ -25,6 +25,51 @@ body {
 }
 
 
+
+
+
+/* ____________________________________________ */
+
+/* Меню */
+
+.menu {
+    width: 100%;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem;
+}
+
+.menu__item {
+    list-style-type: none;
+}
+
+.menu__item a {
+    font-weight: 600;
+    font-size: 1.8rem;
+    font-family: 'Syne', sans-serif;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+/* .menu_hidden {
+    display: none;
+} */
+
+/* ______________________________________________________ */
+
+
+
+
+
+
 .wrapper {
     display: flex;
     min-height: 100vh;
