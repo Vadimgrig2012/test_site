@@ -21,7 +21,6 @@ body {
     color: #181818;
     background: #4E82A6;
     overflow-x: hidden;
-    /* padding-top: 10rem; */
 }
 
 
@@ -108,6 +107,8 @@ img {
 
 
 
+
+/* _____кнопка_______ */
 .btn-wrap {
     width: 100%;
     display: flex;
@@ -141,7 +142,11 @@ img {
   }
 
 
+/* ______________ */
+
+
 .block-wrap {
+    /* width: 100vw; */
     display: flex;
     flex-direction: column;
 }
